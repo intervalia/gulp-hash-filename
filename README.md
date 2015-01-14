@@ -4,8 +4,8 @@ gulp-hash-filename
 [![NPM version](http://img.shields.io/npm/v/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Downloads](http://img.shields.io/npm/dm/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Support us](http://img.shields.io/gittip/intervalia.svg)](https://www.gittip.com/intervalia/)
-[![Build Status](https://travis-ci.org/intervalia/gulp-hash-filename.svg?branch=master)](https://travis-ci.org/intervalia/gulp-hash-filename)
 <!--
+[![Build Status](https://travis-ci.org/intervalia/gulp-hash-filename.svg?branch=master)](https://travis-ci.org/intervalia/gulp-hash-filename)
 [![Coveralls Status](https://img.shields.io/coveralls/intervalia/gulp-hash-filename.svg)](https://coveralls.io/r/intervalia/gulp-hash-filename)
 -->
 
