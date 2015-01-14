@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test formatStr</title>
+    <script>
+var reObj = /\{[^}]+\}/gm;
+var reNum = /\{\d+\}/gm;
+function formatStr(text, params) {
+  var re;
+
+  if (arguments.length > 1) {
+    if(typeof params !== 'object') {
+      params = Array.prototype.slice.call(arguments, 1);
+      re = reNum;
+    }
+    else {
+      re = reObj;
+    }
+
+    text = text.replace(re, function(item) {
+      var key = item.slice(1,-1);
+      if(params[key] !== undefined) {
+        return params[key];
+      }
+      return item;
+    });
+  }
+
+  return text;
+}
+
+function doStrFormat() {
+  console.time("duration");
+  var val = inField.value;
+  var params = {
+    "name": "myFile",
+    "ext": ".js",
+    "hash": "blahblahblah",
+    "size": 300
+  };
+
+  var newVal = formatStr("{0}-{1}-{2}-{3}", "One", 2, 3.0, "(FOUR)");
+  console.log("newVal:", newVal);
+  newVal = formatStr(val, params);
+  console.log("newVal:", newVal);
+  outField.innerHTML = newVal;
+  console.timeEnd("duration");
+}
+    </script>
+  </head>
+  <body>
+    <input type="text" id="in" value="{name}-{hash}{ext}">
+    <button id="test">Test</button>
+    <div id="out"></div>
+    <script>
+    var inField = document.getElementById("in");
+    var outField = document.getElementById("out");
+    var btn = document.getElementById("test");
+    btn.addEventListener("click", doStrFormat);
+    </script>
+  </body>
+</html>
