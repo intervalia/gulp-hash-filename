@@ -108,10 +108,15 @@ The output format used by atime, ctime and mtime is a format that includes the Y
 
 #### More examples
 Below are some other examples of the output filename based on the following values:
+
+| parameter | value |
+| --- | --- |
 | filename | "sample.js" |
 | file size | 12,234 bytes |
 | ctime | Dec 19, 2014 at 3:15:33am and 235 milliseconds |
 | hash | ABCDEF0000FEDCBA |
+
+Example output file name:
 
 | format string | output file name |
 | --- | --- |
