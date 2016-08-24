@@ -4,8 +4,8 @@ gulp-hash-filename
 [![NPM version](http://img.shields.io/npm/v/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Downloads](http://img.shields.io/npm/dm/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Support us](http://img.shields.io/gittip/intervalia.svg)](https://www.gittip.com/intervalia/)
-<!--
 [![Build Status](https://travis-ci.org/intervalia/gulp-hash-filename.svg?branch=master)](https://travis-ci.org/intervalia/gulp-hash-filename)
+<!--
 [![Coveralls Status](https://img.shields.io/coveralls/intervalia/gulp-hash-filename.svg)](https://coveralls.io/r/intervalia/gulp-hash-filename)
 -->
 
@@ -13,7 +13,7 @@ gulp-hash-filename
 
 `gulp-hash-filename` is a gulp plug-in that renames each file using a generated hash value based on the contents of the source file.
 
-Using hashed filenames based on content allows for filenames that only change as the content changes. This helps improve caching of your files. If the content does not change then the filename does not change and that file can still be pulled from the browser's cache. 
+Using hashed filenames based on content allows for filenames that only change as the content changes. This helps improve caching of your files. If the content does not change then the filename does not change and that file can still be pulled from the browser's cache.
 
 ---
 >Always reference the documents on the git repo since they are updated more often then the NPM package website. I update NPM when there is a code change. I might change documentation without a code change and, at that time, I would not update the version number or NPM release.
@@ -84,7 +84,7 @@ gulp.task('assemble', function() {
 
 Currently (2015-01-13) there is only one option that is allowed in the `hash()` function. That is the `format` option.
 
-`format` is used to control the output filename format. The default value for `format` is `"{name}-{hash}{ext}"`. 
+`format` is used to control the output filename format. The default value for `format` is `"{name}-{hash}{ext}"`.
 
 **example:** Assuming the incoming filename was `"sample.js"` and the hash value was `"a8c23bc812abef98"` and that the `format` value is the default then the hashed filename would be `"sample-a8c23bc812abef98.js"`
 
@@ -106,6 +106,16 @@ The output format used by atime, ctime and mtime is a format that includes the Y
 
 **example:** `"2015-01-31T11-34-13.1234Z"`
 
+#### Limiting the length of the output
+
+> New feature as of version 1.1.0
+
+You can limit the number of characters for the value of each parameter by adding `:value` to the parameter.
+
+For example if you only want to use the first 8 characters of the `hash` value you would use the parameter `{hash:8}`.
+
+
+
 #### More examples
 Below are some other examples of the output filename based on the following values:
 
@@ -124,6 +134,8 @@ Example output file name:
 | {name}.{hash}.js1 | sample.ABCDEF0000FEDCBA.js1 |
 | {name}{ext} | Leaves the filename as it was. (sample.js) |
 | proj-{name}-{ctime}{ext} | proj-sample-2014-12-19T03-15-33.235Z.js |
+| {name}.{hash:5}{ext} | sample.ABCDE.js |
+| {name}.{hash:8}{ext} | sample.ABCDEF00.js |
 
 ---
 #License

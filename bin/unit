@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# fail fast
+set -o errexit
+set -o pipefail
+
+echo ------------------------
+echo Mocha Tests
+echo ------------------------
+./node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- test/*.test.js
+echo ------------------------
+echo Finished
+echo ------------------------
