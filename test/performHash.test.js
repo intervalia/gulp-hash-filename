@@ -54,4 +54,15 @@ describe('performHash.js', function () {
       resolve();
     });
   });
+
+  it('should handle generated files', function() {
+    return new Promise(function(resolve, reject) {
+      file = {
+        path: '/dog/cat/myFile.txt',
+        contents: 'this is a test',
+      }
+      expect(performHash('{size}|{atime}|{ctime}|{mtime}', file).path).to.equal('/dog/cat/|||');
+      resolve();
+    });
+  });
 });
