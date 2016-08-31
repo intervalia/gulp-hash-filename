@@ -97,12 +97,14 @@ Currently (2015-01-13) there is only one option that is allowed in the `hash()` 
 | {ctime} | The inode or file `change` time. |
 | {mtime} | The file `modify` time. |
 
-#### atime, ctime and mtime
+#### `atime`, `ctime` and `mtime`
 For more information about what the time formats mean [go here](http://www.linux-faqs.info/general/difference-between-mtime-ctime-and-atime)
 
-The output format used by atime, ctime and mtime is a format that includes the Year, Month, Date, Hours, Minutes, Seconds and Milliseconds.
+The output format used by `atime`, `ctime` and `mtime` is a format that includes the Year, Month, Date, Hours, Minutes, Seconds and Milliseconds.
 
 **example:** `"2015-01-31T11-34-13.1234Z"`
+
+>As of version 1.2.0 if a file is added through the gulp system that does not support the `file.stat` object the values for `atime`, `ctime` and `mtime` will be an empty string.
 
 #### Limiting the length of the output
 

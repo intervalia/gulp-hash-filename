@@ -1,7 +1,11 @@
 Update History
 ==============
 
-### 1.1.1 
+
+### 1.2.0
+* PR#3 from tuck182 - Handle generated files that do not support the `file.stat` object.
+
+### 1.1.1
 * Adding support for coveralls
 
 ### 1.1.0

@@ -1,6 +1,6 @@
 {
   "name": "gulp-hash-filename",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Michael G Collins <intervalia@gmail.com>",
   "license": "MIT",
   "description": "gulp-hash-filename is a gulp plug-in that adds a hash to the filename based on the content of that file, size of that file, or the file's atime, ctime and mtime.",
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/intervalia/gulp-hash-filename",
   "dependencies": {
     "gulp-util": "^3.0.7",
-    "through2": "^0.6.5"
+    "through2": "^2.0.1"
   },
   "engines": {
     "node": ">= 0.8.0"
@@ -33,8 +33,11 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.12",
     "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
     "istanbul": "^0.4.5",
+    "jshint": "^2.9.3",
     "mocha": "^3.0.2",
-    "mocha-lcov-reporter": "^1.2.0"
+    "mocha-lcov-reporter": "^1.2.0",
+    "should": "^11.1.0"
   }
 }
