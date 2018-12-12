@@ -1,7 +1,4 @@
 var formatStr = require('../lib/formatStr');
-var path = require('path');
-var fs = require('fs');
-var gutil = require('gulp-util');
 var chai = require('chai');
 var expect = chai.expect;
 

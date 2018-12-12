@@ -1,7 +1,4 @@
 var generateHash = require('../lib/generateHash');
-var path = require('path');
-var fs = require('fs');
-var gutil = require('gulp-util');
 var chai = require('chai');
 var expect = chai.expect;
 
