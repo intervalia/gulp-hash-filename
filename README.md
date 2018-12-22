@@ -1,9 +1,7 @@
-gulp-hash-filename
-========================
+# gulp-hash-filename
 
 [![NPM version](http://img.shields.io/npm/v/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Downloads](http://img.shields.io/npm/dm/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
-[![Support us](http://img.shields.io/gittip/intervalia.svg)](https://www.gittip.com/intervalia/)
 [![Build Status](https://travis-ci.org/intervalia/gulp-hash-filename.svg?branch=master)](https://travis-ci.org/intervalia/gulp-hash-filename)
 [![Coverage Status](https://coveralls.io/repos/github/intervalia/gulp-hash-filename/badge.svg?branch=master)](https://coveralls.io/github/intervalia/gulp-hash-filename?branch=master)
 
@@ -17,21 +15,24 @@ Using hashed filenames based on content allows for filenames that only change as
 >Always reference the documents on the git repo since they are updated more often then the NPM package website. I update NPM when there is a code change. I might change documentation without a code change and, at that time, I would not update the version number or NPM release.
 
 ---
-#Install
+## Install
+
 ```shell
 npm install -g gulp-hash-filename
 ```
 
 
 ---
-#Pull Requests and Issues
+## Pull Requests and Issues
+
 Please submit **[pull requests](https://github.com/intervalia/gulp-hash-filename/pulls)** and **[issues](https://github.com/intervalia/gulp-hash-filename/issues)**. I will do my best to review and take care of PRs and issues quickly. If you have suggestions, I would love to hear them.
 
 
 ---
-#Usage of `gulp-hash-filename`
+## Usage of `gulp-hash-filename`
 
-###Example of the `hash()` function
+### Example of the `hash()` function
+
 Here is an example of how to use the `hash()` function:
 
 ```js
@@ -78,7 +79,7 @@ gulp.task('assemble', function() {
 });
 ```
 ---
-##Options used in the `hash()` function
+### Options used in the `hash()` function
 
 Currently (2015-01-13) there is only one option that is allowed in the `hash()` function. That is the `format` option.
 
@@ -86,7 +87,8 @@ Currently (2015-01-13) there is only one option that is allowed in the `hash()` 
 
 **example:** Assuming the incoming filename was `"sample.js"` and the hash value was `"a8c23bc812abef98"` and that the `format` value is the default then the hashed filename would be `"sample-a8c23bc812abef98.js"`
 
-###`format` paramaters
+#### `format` paramaters
+
 | Parameter | Description |
 | --- | --- |
 | {name} | The base portion of the filename. For `sample.js` the {name} is `sample`. For `sample.test.js` the {name} is `sample.test`. |
@@ -97,7 +99,8 @@ Currently (2015-01-13) there is only one option that is allowed in the `hash()` 
 | {ctime} | The inode or file `change` time. |
 | {mtime} | The file `modify` time. |
 
-#### `atime`, `ctime` and `mtime`
+##### `atime`, `ctime` and `mtime`
+
 For more information about what the time formats mean [go here](http://www.linux-faqs.info/general/difference-between-mtime-ctime-and-atime)
 
 The output format used by `atime`, `ctime` and `mtime` is a format that includes the Year, Month, Date, Hours, Minutes, Seconds and Milliseconds.
@@ -106,7 +109,7 @@ The output format used by `atime`, `ctime` and `mtime` is a format that includes
 
 >As of version 1.2.0 if a file is added through the gulp system that does not support the `file.stat` object the values for `atime`, `ctime` and `mtime` will be an empty string.
 
-#### Limiting the length of the output
+### Limiting the length of the output
 
 > New feature as of version 1.1.0
 
@@ -116,7 +119,8 @@ For example if you only want to use the first 8 characters of the `hash` value y
 
 
 
-#### More examples
+### More examples
+
 Below are some other examples of the output filename based on the following values:
 
 | parameter | value |
@@ -138,11 +142,13 @@ Example output file name:
 | {name}.{hash:8}{ext} | sample.ABCDEF00.js |
 
 ---
-#License
+# License
+
 MIT - [License File](https://github.com/intervalia/gulp-hash-filename/tree/master/LICENSE.md)
 
 
 
 ---
-#Update History
+# Update History
+
 [Update History File](https://github.com/intervalia/gulp-hash-filename/tree/master/UPDATE_HISTORY.md)

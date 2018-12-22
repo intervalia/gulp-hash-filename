@@ -1,6 +1,8 @@
 Update History
 ==============
 
+### 2.0.0
+* This is really PR#7 from dwighthouse - But going a little further in updating ALL dependencies and removing code that is no longer needed.
 
 ### 1.2.0
 * PR#3 from tuck182 - Handle generated files that do not support the `file.stat` object.

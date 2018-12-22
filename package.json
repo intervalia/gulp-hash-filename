@@ -6,7 +6,10 @@
   "description": "gulp-hash-filename is a gulp plug-in that adds a hash to the filename based on the content of that file, size of that file, or the file's atime, ctime and mtime.",
   "main": "./index.js",
   "scripts": {
-    "test": "./bin/unit"
+    "debug-mocha": "node --inspect-brk node_modules/mocha/bin/_mocha src/*.mocha.js test/*.test.js",
+    "lint": "eslint index.js lib/*.js test/*.js",
+    "test": "npm run lint && npm run test-mocha && nyc report --reporter=text-lcov | coveralls",
+    "test-mocha": "nyc --nycrc-path test/.nycrc-mocha.json ./node_modules/.bin/_mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -22,22 +25,16 @@
     "url": "https://github.com/intervalia/gulp-hash-filename/issues"
   },
   "homepage": "https://github.com/intervalia/gulp-hash-filename",
-  "dependencies": {
-    "gulp-util": "^3.0.7",
-    "through2": "^2.0.1"
-  },
+  "dependencies": {},
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 8.0.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.12",
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^2.0.1",
-    "istanbul": "^0.4.5",
-    "jshint": "^2.9.3",
-    "mocha": "^3.0.2",
-    "mocha-lcov-reporter": "^1.2.0",
-    "should": "^11.1.0"
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.10.0",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.1.0"
   }
 }

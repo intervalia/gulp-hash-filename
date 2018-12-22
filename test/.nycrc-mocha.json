@@ -1,0 +1,30 @@
+{
+  "all": true,
+  "branches": 70,
+  "cache": false,
+  "check-coverage": false,
+  "eager": true,
+  "exclude": [
+  ],
+  "extension": [],
+  "functions": 70,
+  "include": [
+    "lib/*.js"
+  ],
+  "instrument": true,
+  "lines": 70,
+  "per-file": true,
+  "report-dir": "coverage/mocha",
+  "reporter": [
+    "lcov",
+    "text-summary"
+  ],
+  "require": [],
+  "statements": 70,
+  "watermarks": {
+    "lines": [70, 90],
+    "functions": [70, 90],
+    "branches": [70, 90],
+    "statements": [70, 90]
+  }
+}

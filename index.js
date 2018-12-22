@@ -1,11 +1,13 @@
-var stream = require('stream');
-var performHash = require('./lib/performHash');
+const stream = require('stream');
+const performHash = require('./lib/performHash');
 
 function hashFileName(options) {
-  'use strict';
-  var assemblyStream = new stream.Transform({objectMode: true});
-  options = options || {};
-  var format = options.format||"{name}-{hash}{ext}";
+  const assemblyStream = new stream.Transform({objectMode: true});
+  let opts = options;
+  if (!opts || typeof opts !== 'object') {
+    opts = {};
+  }
+  const format = options.format || "{name}-{hash}{ext}";
 
   assemblyStream._transform = function(file, unused, callback) {
     this.push(performHash(format, file));
@@ -15,5 +17,4 @@ function hashFileName(options) {
   return assemblyStream;
 }
 
-// exporting the plugin main function
 module.exports = hashFileName;

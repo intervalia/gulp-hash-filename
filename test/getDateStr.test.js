@@ -1,28 +1,19 @@
-var getDateStr = require('../lib/getDateStr');
-var path = require('path');
-var fs = require('fs');
-var gutil = require('gulp-util');
-var chai = require('chai');
-var expect = chai.expect;
+/* eslint-env mocha */
+const getDateStr = require('../lib/getDateStr');
+const {expect} = require('chai');
 
-describe('getDateStr.js', function () {
-  it('should handle valid Date', function() {
-    return new Promise(function(resolve, reject) {
-      var d = new Date('Mon, 4 Dec 1995 13:30:00 GMT');
-      expect(getDateStr(d)).to.equal('1995-12-04T13-30-00.000Z');
-      resolve();
-    });
+describe('getDateStr.js', () => {
+  it('should handle valid Date', () => {
+    const d = new Date('Mon, 4 Dec 1995 13:30:00 GMT');
+    expect(getDateStr(d)).to.equal('1995-12-04T13-30-00.000Z');
   });
 
-  it('should handle null Date', function() {
-    return new Promise(function(resolve, reject) {
-      function fn() {
-        var d = null;
-        getDateStr(d);
-      }
+  it('should handle null Date', () => {
+    function fn() {
+      const d = null;
+      getDateStr(d);
+    }
 
-      expect(fn).to.throw;
-      resolve();
-    });
+    expect(fn).to.throw; // eslint-disable-line no-unused-expressions
   });
 });
