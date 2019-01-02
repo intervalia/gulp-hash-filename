@@ -12,32 +12,41 @@
 Using hashed filenames based on content allows for filenames that only change as the content changes. This helps improve caching of your files. If the content does not change then the filename does not change and that file can still be pulled from the browser's cache.
 
 ---
+
 >Always reference the documents on the git repo since they are updated more often then the NPM package website. I update NPM when there is a code change. I might change documentation without a code change and, at that time, I would not update the version number or NPM release.
 
 ---
+
 ## Install
 
 ```shell
 npm install -g gulp-hash-filename
 ```
 
+or
+
+```shell
+npm install --save-dev gulp-hash-filename
+```
 
 ---
+
 ## Pull Requests and Issues
 
 Please submit **[pull requests](https://github.com/intervalia/gulp-hash-filename/pulls)** and **[issues](https://github.com/intervalia/gulp-hash-filename/issues)**. I will do my best to review and take care of PRs and issues quickly. If you have suggestions, I would love to hear them.
 
 
 ---
+
 ## Usage of `gulp-hash-filename`
 
 ### Example of the `hash()` function
 
-Here is an example of how to use the `hash()` function:
+Here is an example of how to use the `hash()` function in your `gulpfile.js` file:
 
 ```js
-var gulp = require('gulp');
-var hash = require('gulp-hash-filename');
+const gulp = require('gulp');
+const hash = require('gulp-hash-filename');
 
 gulp.task('assemble', function() {
   return gulp.src('./assembly.json')
@@ -49,10 +58,10 @@ gulp.task('assemble', function() {
 The example below includes minification and saving the file with both the hashed filename `"{name}-{hash}{ext}"` and the hashed and minimized filename `"{name}-{hash}-min{ext}"` format.
 
 ```js
-var gulp   = require('gulp');
-var uglify  = require('gulp-uglify');
-var rename  = require('gulp-rename');
-var hash = require('gulp-hash-filename');
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const hash = require('gulp-hash-filename');
 
 gulp.task('assemble', function() {
   return gulp.src('./*.js')
@@ -67,8 +76,8 @@ gulp.task('assemble', function() {
 You can change how the filename is formatted by passing in a `format` option in the `hash()` function.
 
 ```js
-var gulp = require('gulp');
-var hash = require('gulp-hash-filename');
+const gulp = require('gulp');
+const hash = require('gulp-hash-filename');
 
 gulp.task('assemble', function() {
   return gulp.src('./assembly.json')
@@ -78,10 +87,12 @@ gulp.task('assemble', function() {
     .pipe(gulp.dest('./dist'))
 });
 ```
+
 ---
+
 ### Options used in the `hash()` function
 
-Currently (2015-01-13) there is only one option that is allowed in the `hash()` function. That is the `format` option.
+There is only one option that is allowed in the `hash()` function. That is the `format` option.
 
 `format` is used to control the output filename format. The default value for `format` is `"{name}-{hash}{ext}"`.
 
@@ -111,13 +122,9 @@ The output format used by `atime`, `ctime` and `mtime` is a format that includes
 
 ### Limiting the length of the output
 
-> New feature as of version 1.1.0
-
 You can limit the number of characters for the value of each parameter by adding `:value` to the parameter.
 
 For example if you only want to use the first 8 characters of the `hash` value you would use the parameter `{hash:8}`.
-
-
 
 ### More examples
 
@@ -145,8 +152,6 @@ Example output file name:
 # License
 
 MIT - [License File](https://github.com/intervalia/gulp-hash-filename/tree/master/LICENSE.md)
-
-
 
 ---
 # Update History
