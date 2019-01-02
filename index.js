@@ -7,7 +7,8 @@ function hashFileName(options) {
   if (!opts || typeof opts !== 'object') {
     opts = {};
   }
-  const format = options.format || "{name}-{hash}{ext}";
+
+  const format = opts.format || "{name}-{hash}{ext}";
 
   assemblyStream._transform = function(file, unused, callback) {
     this.push(performHash(format, file));
