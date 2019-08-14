@@ -13,5 +13,6 @@ before_script:
 script:
   - npm test
   - cp coverage/mocha/lcov.info coverage/lcov.info
+  - cp coverage/mocha/lcov.info ./lcov.info
 after_success:
-  - ./cc-test-reporter after-build -t lcov
+  - ./cc-test-reporter after-build
