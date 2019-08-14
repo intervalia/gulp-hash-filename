@@ -8,10 +8,8 @@ sudo: false
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 script:
   - npm test
   - cp coverage/mocha/lcov.info coverage/lcov.info
-  - cp coverage/mocha/lcov.info ./lcov.info
 after_success:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter --exit-code $TRAVIS_TEST_RESULT
