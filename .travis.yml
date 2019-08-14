@@ -4,7 +4,6 @@ env:
 language: node_js
 node_js:
   - "8.6"
-  - "12.8"
 sudo: false
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -15,4 +14,4 @@ script:
   - cp coverage/mocha/lcov.info coverage/lcov.info
   - cp coverage/mocha/lcov.info ./lcov.info
 after_success:
-  - ./cc-test-reporter after-build
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
