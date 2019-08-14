@@ -13,4 +13,4 @@ before_script:
 script:
   - npm test
 after_success:
-  - ./cc-test-reporter after-build
+  - ./cc-test-reporter after-build -p coverage/mocha
