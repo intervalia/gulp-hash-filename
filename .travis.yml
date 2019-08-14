@@ -13,6 +13,5 @@ script:
   - npm test
   - cp coverage/mocha/lcov.info coverage/lcov.info
 after_script:
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.mocha.json coverage/mocha/lcov.info  # Format frontend coverage
-  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/mocha/lcov.info  # Format frontend coverage
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
