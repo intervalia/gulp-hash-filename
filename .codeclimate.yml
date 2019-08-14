@@ -1,0 +1,52 @@
+version: "2"
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 250
+  identical-code:
+    config:
+      threshold: 4
+  method-complexity:
+    config:
+      threshold: 10
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    config:
+      threshold: 4
+plugins: 
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - "javascript"
+  eslint:
+    enabled: true
+    channel: "eslint-5"
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  nodesecurity:
+    enabled: true
+exclude_patterns:
+  - "bin/"
+  - "coverage/"
+  - "node_modules/"
+  - "test/"
