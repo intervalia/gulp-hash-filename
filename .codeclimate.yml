@@ -31,6 +31,8 @@ checks:
     config:
       threshold: 10
 plugins: 
+  csslint:
+    enabled: true
   duplication:
     enabled: true
     config:
@@ -39,8 +41,36 @@ plugins:
   eslint:
     enabled: true
     channel: "eslint-5"
+    config:
+      extensions:
+        - .html
+        - .js
+      ignore_warnings: true
   fixme:
     enabled: true
+    config:
+      strings:
+      - FIXME
+      - TODO
+      - ToDo
+      - Todo
+      - TO-DO
+      - To-Do
+      - HACK
+      - Hack
+      - HERE BE DRAGONS
+      - Here Be Dragons
+  grep:
+    enabled: true
+    config:
+      patterns:
+        bad-merge:
+          pattern: <<<<<<<|=======|>>>>>>>
+          annotation: "Bad merge"
+          severity: critical
+          categories: ["Bug Risk", "Performance"]
+          content: >
+            Bad merge detected by one or more of the following strings of the form: "<<<<<<< Updated upstream", "=======", ">>>>>>> Stashed changes". In all likelihood, this will result in syntax errors when attempting to run your application.
   markdownlint:
     enabled: true
     checks:
