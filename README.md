@@ -4,6 +4,8 @@
 [![Downloads](http://img.shields.io/npm/dm/gulp-hash-filename.svg)](https://npmjs.org/package/gulp-hash-filename)
 [![Build Status](https://travis-ci.org/intervalia/gulp-hash-filename.svg?branch=master)](https://travis-ci.org/intervalia/gulp-hash-filename)
 [![Coverage Status](https://coveralls.io/repos/github/intervalia/gulp-hash-filename/badge.svg?branch=master)](https://coveralls.io/github/intervalia/gulp-hash-filename?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/116c22e4288eba491381/maintainability)](https://codeclimate.com/github/intervalia/gulp-hash-filename/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/116c22e4288eba491381/test_coverage)](https://codeclimate.com/github/intervalia/gulp-hash-filename/test_coverage)
 
 ---
 
@@ -34,7 +36,6 @@ npm install --save-dev gulp-hash-filename
 ## Pull Requests and Issues
 
 Please submit **[pull requests](https://github.com/intervalia/gulp-hash-filename/pulls)** and **[issues](https://github.com/intervalia/gulp-hash-filename/issues)**. I will do my best to review and take care of PRs and issues quickly. If you have suggestions, I would love to hear them.
-
 
 ---
 
@@ -81,9 +82,7 @@ const hash = require('gulp-hash-filename');
 
 gulp.task('assemble', function() {
   return gulp.src('./assembly.json')
-    .pipe(hash({
-    	"format": "{name}.{hash}.{size}{ext}"
-    }))
+    .pipe(hash({"format": "{name}.{hash}.{size}{ext}"}))
     .pipe(gulp.dest('./dist'))
 });
 ```
