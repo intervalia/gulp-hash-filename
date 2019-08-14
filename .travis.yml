@@ -9,7 +9,8 @@ sudo: false
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - npm test
 after_success:
-  - ./cc-test-reporter < coverage/mocha/lcov.info
+  - ./cc-test-reporter after-build
