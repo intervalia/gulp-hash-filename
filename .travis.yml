@@ -12,6 +12,6 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - npm test
-  - cp coverage/mocha/lcov.info coverage/mocha/lcov.lcov
+  - cp coverage/mocha/lcov.info .
 after_success:
-  - ./cc-test-reporter after-build -p coverage/mocha
+  - ./cc-test-reporter after-build -t lcov
