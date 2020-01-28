@@ -45,7 +45,7 @@
     "no-new-wrappers": "error",
     "no-octal": "warn",
     "no-octal-escape": "warn",
-    "no-param-reassign": "warn",
+    "no-param-reassign": "off",
     "no-process-env": "off",
     "no-proto": "error",
     "no-redeclare": "error",
