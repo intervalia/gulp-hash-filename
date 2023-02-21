@@ -3,6 +3,7 @@ Update History
 
 | Version | Released | Details |
 | --- | --- | --- |
+| 4.1.0 | 2023-02-21 | * Updated all 3rd party repos |
 | 3.0.0 | 2020-01-28 | * Updated all 3rd party repos<br/>* Removed node 8 support<br/>* Updated to newer ES6 syntax |
 | 2.0.1 | 2019-01-02 | * Minor bug fix to allow no arguments to be passed into the `hash()` function.<br/>* Fixed ISSUE#5. No longer crash if atime, mtime or ctime don't exist. |
 | 2.0.0 | | * This is really PR#7 from dwighthouse - But going a little further in updating ALL dependencies and removing code that is no longer needed.<br/>* Fixed ISSUE#6. Directly related to PR#7. |
